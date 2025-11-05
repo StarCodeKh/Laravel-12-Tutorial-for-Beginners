@@ -31,10 +31,10 @@ class PostController extends Controller
             'content' => 'required',
         ]);
 
-        Post::create($request->only('title', 'content'));
+        $request->user()->posts()->create($request->only('title', 'content'));
 
         return redirect()->route('posts.index')
-                         ->with('success', 'Post created successfully.');
+                        ->with('success', 'Post created successfully.');
     }
 
     public function show(Post $post)
@@ -44,11 +44,14 @@ class PostController extends Controller
 
     public function edit(Post $post)
     {
+        $this->authorize('update', $post);
         return view('posts.edit', compact('post'));
     }
 
     public function update(Request $request, Post $post)
     {
+        $this->authorize('update', $post);
+
         $request->validate([
             'title'   => 'required|max:255',
             'content' => 'required',
@@ -57,14 +60,16 @@ class PostController extends Controller
         $post->update($request->only('title', 'content'));
 
         return redirect()->route('posts.index')
-                         ->with('success', 'Post updated successfully.');
+                        ->with('success', 'Post updated successfully.');
     }
 
     public function destroy(Post $post)
     {
+        $this->authorize('delete', $post);
+
         $post->delete();
 
         return redirect()->route('posts.index')
-                         ->with('success', 'Post deleted successfully.');
+                        ->with('success', 'Post deleted successfully.');
     }
 }
