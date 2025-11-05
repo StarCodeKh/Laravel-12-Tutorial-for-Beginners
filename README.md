@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -59,3 +60,7 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+=======
+# Laravel-12-Tutorial-for-Beginners
+In this tutorial, you’ll learn how to build a simple blog-like CRUD application using Laravel 12. We'll create posts with titles and content, list them, edit them, and delete them. This guide assumes you know basic terminal usage and have a development environment set up.
+>>>>>>> 7e7ea6da3dfd3610dda39b12bf601ffbb5115a83
