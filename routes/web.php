@@ -25,3 +25,7 @@ Route::get('/home', function () {
 Route::middleware('auth')->group(function () {
     Route::resource('posts', PostController::class);
 });
+
+// Route::middleware(['auth', 'role:admin'])->group(function () {
+//     Route::resource('posts', PostController::class);
+// });
